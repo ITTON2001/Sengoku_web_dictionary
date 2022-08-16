@@ -1,0 +1,39 @@
+
+<div class="user_image">
+  <%= image_tag "/user_images/#{@user.image_name}" %>
+</div>
+
+<h2><%= @user.name %></h2>
+<p><%= @user.email %></p>
+
+<% if @user.id == @current_user.id %>
+  <%= link_to("編集","/users/#{@user.id}/edit") %>
+<% end %>
+
+<% if @user.posts.none? %>
+  <p>まだ投稿していません</p>
+
+<% else %>
+  <div class="post_index">
+    <p>投稿したもの</p>
+    <table border="2">
+      <tr>
+        <th></th>
+        <th>名前</th>
+        <th>説明</th>
+      </tr>
+
+      <% @user.posts.each do |post| %>
+        <tr>
+            <td><%= image_tag "/post_images/#{post.post_image}" %></td>
+            <td><%= link_to(post.post_name, "/#{post.map_id}/詳細/#{post.id}" ) %></td>
+            <td><%= post.mini_content %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+
+<% end %>
+
+

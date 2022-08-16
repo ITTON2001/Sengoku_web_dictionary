@@ -1,0 +1,628 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* ヘッダー */
+header{
+  height: 60px;
+}
+
+.header-logo{
+  float: left;
+  font-size: 36px;
+  font-family: 青柳隷書SIMO2_O;
+}
+
+.header-menus{
+  text-align:right;
+  list-style:none;
+  float: right;
+  font-family: 青柳隷書SIMO2_O;
+}
+
+.header-menus li {
+  float: left;
+  padding-right: 20px;
+}
+
+/* body */
+/* top画面 */
+.map{
+  text-align:center;
+  width: 1000px;
+  height: 900px;
+  margin: auto;
+}
+
+.map_image_japan {
+  position: relative;
+}
+
+.map_image_japan img{
+  height: 100%;
+  width: 100%;
+
+}
+
+.map_image_japan a{
+  position: absolute;
+
+}
+
+.map_choice_hokkaido a{
+  top: 17%;
+  right: 20%;
+}
+
+.map_choice_touhoku a{
+  top: 45%;
+  right: 33%;
+}
+
+.map_choice_kanto a{
+  top: 62%;
+  right: 39%;
+}
+
+.map_choice_hokuriku a{
+  top: 54%;
+  right: 46%;
+}
+
+.map_choice_cyubu a{
+  top: 65%;
+  right: 48%;
+}
+
+.map_choice_kinki a{
+  top:68%;
+  right: 57%;
+}
+
+.map_choice_cyugoku a{
+  top: 65%;
+  right: 69%;
+}
+
+.map_choice_sikoku a{
+  top: 73%;
+  right: 68%;
+}
+
+.map_choice_kyusyu a{
+  top: 76%;
+  right: 79%;
+}
+
+.map_choice_ryukyu a{
+  top: 93%;
+  right: 90%;
+}
+
+/* マップ選択画面 */
+/* 東北地方 */
+.map_img_touhoku {
+  position: relative;
+}
+
+.map_img_touhoku img {
+  height: 80%;
+  width: 80%;
+}
+
+.map_img_touhoku a{
+  position: absolute;
+}
+
+.map_choice_mutu a{
+  top: 20%;
+  right: 43%;
+}
+
+.map_choice_rikucyu a{
+  top: 40%;
+  right: 38%;
+}
+
+.map_choice_rikuzen a{
+  top: 60%;
+  right: 45%;
+}
+
+.map_choice_ugo a{
+  top: 40%;
+  right: 50%;
+}
+
+.map_choice_uzen a{
+  top: 60%;
+  right: 55%;
+}
+
+.map_choice_iwaki a{
+  top: 83%;
+  right: 49%;
+}
+
+.map_choice_iwashiro a{
+  top: 78%;
+  right: 59%;
+}
+
+/* 関東地方 */
+.map_img_kanto {
+  position: relative;
+}
+
+.map_img_kanto img {
+  height: 100%;
+  width: 100%;
+}
+
+.map_img_kanto a{
+  position: absolute;
+}
+
+.map_choice_hitachi a{
+  top: 45%;
+  right: 35%;
+}
+
+.map_choice_shimotuke a{
+  top: 35%;
+  right: 44%;
+}
+
+.map_choice_kouzuke a{
+  top: 35%;
+  right: 59%;
+}
+
+.map_choice_shimofusa a{
+  top: 58%;
+  right: 40%;
+}
+
+.map_choice_kazusa a{
+  top: 68%;
+  right: 43%;
+}
+
+.map_choice_awa a{
+  top: 76%;
+  right: 46%;
+}
+
+.map_choice_musashi a{
+  top: 52%;
+  right: 54%;
+}
+
+.map_choice_sagami a{
+  top: 64%;
+  right: 57%;
+}
+
+/* 北陸地方 */
+.map_img_hokuriku {
+  position: relative;
+}
+
+.map_img_hokuriku img {
+  height: 100%;
+  width: 100%;
+}
+
+.map_img_hokuriku a{
+  position: absolute;
+}
+
+.map_choice_echigo a{
+  top: 38%;
+  right: 27%;
+}
+
+.map_choice_eccyu a{
+  top: 58%;
+  right: 58%;
+}
+
+.map_choice_noto a{
+  top: 41%;
+  right: 60%;
+}
+
+.map_choice_kaga a{
+  top: 58%;
+  right: 67%;
+}
+
+.map_choice_echizen a{
+  top: 69%;
+  right: 73%;
+}
+
+.map_choice_wakasa a{
+  top: 78%;
+  right: 82%;
+}
+
+.map_choice_sado a{
+  top: 30%;
+  right: 37%;
+}
+
+/* 中部地方 */
+.map_img_cyubu {
+  position: relative;
+}
+
+.map_img_cyubu img {
+  height: 90%;
+  width: 90%;
+}
+
+.map_img_cyubu a {
+  position: absolute;
+}
+
+.map_choice_kai a{
+  top: 55%;
+  right: 32%;
+}
+
+.map_choice_suruga a{
+  top: 65%;
+  right: 32%;
+}
+
+.map_choice_izu a{
+  top: 75%;
+  right: 29%;
+}
+
+.map_choice_shinano a{
+  top: 42%;
+  right: 41%;
+}
+
+.map_choice_totoumi a{
+  top: 72%;
+  right: 47%;
+}
+
+.map_choice_mikawa a{
+  top: 68%;
+  right: 57%;
+}
+
+.map_choice_owari a{
+  top: 61%;
+  right: 64%;
+}
+
+.map_choice_mino a{
+  top: 53%;
+  right: 62%;
+}
+
+.map_choice_hida a{
+  top: 40%;
+  right: 56%;
+}
+
+/* 近畿地方 */
+.map_img_kinki {
+  position: relative;
+}
+
+.map_img_kinki img {
+  height: 90%;
+  width: 90%;
+}
+
+.map_img_kinki a{
+  position: absolute;
+}
+
+.map_choice_oumi a{
+  top: 35%;
+  right: 37%;
+}
+
+.map_choice_ise a{
+  top: 56%;
+  right: 34%;
+}
+
+.map_choice_shima a{
+  top: 63%;
+  right: 25%;
+}
+
+.map_choice_iga a{
+  top: 49%;
+  right: 38.5%;
+}
+
+.map_choice_yamato a{
+  top: 60%;
+  right: 46%;
+}
+
+.map_choice_yamato a{
+  top: 60%;
+  right: 46%;
+}
+
+.map_choice_kii a{
+  top: 70%;
+  right: 60%;
+}
+
+.map_choice_waizumi a{
+  top: 54%;
+  right: 57%;
+}
+
+.map_choice_kawachi a{
+  top: 50%;
+  right: 51%;
+}
+
+.map_choice_yamashiro a{
+  top: 42%;
+  right: 46%;
+}
+
+.map_choice_settu a{
+  top: 42%;
+  right: 56%;
+}
+
+.map_choice_tanba a{
+  top: 30%;
+  right: 55%;
+}
+
+.map_choice_tango a{
+  top: 15%;
+  right: 58%;
+}
+
+.map_choice_tazima a{
+  top: 15%;
+  right: 67%;
+}
+
+.map_choice_harima a{
+  top: 35%;
+  right: 69%;
+}
+
+.map_choice_awazi a{
+  top: 55%;
+  right: 69%;
+}
+
+/* 中国地方 */
+.map_img_cyugoku {
+  position: relative;
+}
+
+.map_img_cyugoku img {
+  height: 90%;
+  width: 90%;
+}
+
+.map_img_cyugoku a {
+  position: absolute;
+}
+
+.map_choice_inaba a{
+  top: 40%;
+  right: 22%;
+}
+
+.map_choice_misaka a{
+  top: 47%;
+  right: 27%;
+}
+
+.map_choice_bizen a{
+  top: 57%;
+  right: 27%;
+}
+
+.map_choice_biccyu a{
+  top: 52%;
+  right: 35%;
+}
+
+.map_choice_bingo a{
+  top: 52%;
+  right: 43%;
+}
+
+.map_choice_aki a{
+  top: 56%;
+  right: 54%;
+}
+
+.map_choice_suou a{
+  top: 64%;
+  right: 67%;
+}
+
+.map_choice_houki a{
+  top: 38%;
+  right: 33%;
+}
+
+.map_choice_izumo a{
+  top: 38%;
+  right: 43%;
+}
+
+.map_choice_iwami a{
+  top: 47%;
+  right: 58%;
+}
+
+.map_choice_nagato a{
+  top: 57%;
+  right: 74%;
+}
+
+.map_choice_oki a{
+  top: 20%;
+  right: 40%;
+}
+
+/* 四国地方 */
+.map_img_sikoku {
+  position: relative;
+}
+
+.map_img_sikoku img {
+  height: 90%;
+  width: 90%;
+}
+
+.map_img_sikoku a {
+  position: absolute;
+}
+
+.map_choice_sanuki a{
+  top: 34%;
+  right: 36%;
+}
+
+.map_choice_awa_shikoku a{
+  top: 46%;
+  right: 30%;
+}
+
+.map_choice_iyo a{
+  top: 46%;
+  right: 62%;
+}
+
+.map_choice_tosa a{
+  top: 52%;
+  right: 50%;
+}
+
+
+/* 九州地方 */
+.map_img_kyusyu {
+  position: relative;
+}
+
+.map_img_kyusyu img {
+  height: 90%;
+  width: 90%;
+}
+
+.map_img_kyusyu a {
+  position: absolute;
+}
+
+.map_choice_buzen a{
+  top: 29%;
+  right: 42%;
+}
+
+.map_choice_bungo a{
+  top: 38%;
+  right: 39%;
+}
+
+.map_choice_hyuga a{
+  top: 56%;
+  right: 43%;
+}
+
+.map_choice_osumi a{
+  top: 70%;
+  right: 51%;
+}
+
+.map_choice_chikuzen a{
+  top: 27%;
+  right: 49%;
+}
+
+.map_choice_chikugo a{
+  top: 34%;
+  right: 50%;
+}
+
+.map_choice_hizen a{
+  top: 33%;
+  right: 58%;
+}
+
+.map_choice_higo a{
+  top: 46%;
+  right: 48%;
+}
+
+.map_choice_satuma a{
+  top: 65%;
+  right: 57%;
+}
+
+.map_choice_iki a{
+  top: 22%;
+  right: 57%;
+}
+
+.map_choice_tushima a{
+  top: 10%;
+  right: 63%;
+}
+
+
+/* 人物一覧画面 */
+.post_index img{
+  width: 100px;
+  height: 100px;
+}
+
+/* 人物詳細画面 */
+.post_image img{
+  width: 200px;
+  height: 200px;
+}
+
+/* ユーザー詳細画面 */
+.user_image img{
+  width: 200px;
+  height: 200px;
+}
+
+/* フッター */
+footer{
+  text-align:center;
+  height: 100px;
+  background-color: burlywood;
+}
+
+footer img{
+  height: 80px;
+  margin: 10px;
+}
+

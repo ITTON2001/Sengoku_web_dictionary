@@ -1,0 +1,11 @@
+<h1>編集が完了しました</h1>
+
+<%= form_tag("/edits/create") do %>
+  <h1>変更記録</h1>
+  <textarea name="edit_text"></textarea>
+
+  <textarea name="post_id"><%= @edit.post_id %></textarea>
+  <input type="submit" value="完了">
+<% end %>
+
+<%= @edit.post_id %>

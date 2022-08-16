@@ -1,0 +1,28 @@
+<h1>新規投稿</h1>
+
+<!-- エラーメッセージ -->
+ <% @post.errors.full_messages.each do |message| %>
+   <li><%= message %></li>
+ <% end %>
+
+
+<%= form_tag("/posts/create",{multipart: true}) do %>
+  <p>人名</p>
+  <input name="post_name">
+  <p>一言紹介</p>
+  <textarea name="mini_content"></textarea>
+  <p>説明</p>
+  <textarea name="content"></textarea>
+  <p>出身地/活躍地</p>
+  <select name="map_id">
+    <option></option>
+    <% @maps.each do |map| %>
+      <option>
+        <%= map.map_name %>
+      </option>
+    <% end %>
+  </select>
+  <p>画像</p>
+  <input name="image" type="file">
+  <input type="submit" value="投稿">
+<% end %>

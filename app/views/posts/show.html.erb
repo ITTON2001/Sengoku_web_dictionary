@@ -1,0 +1,31 @@
+<h1> <%= @post.post_name %> </h1>
+
+<div class="post_image">
+  <%= image_tag "/post_images/#{@post.post_image}" %>
+</div>
+
+<%= @post.map_id %>
+<%= @post.mini_content %>
+<%= @post.content %>
+
+<%= link_to "編集","/#{@post.map_id}/詳細/#{@post.id}/edit" %>
+
+<div class="user_image">
+  <%= image_tag "/user_images/#{@user.image_name}" %>
+</div>
+<%= link_to(@user.name, "/users/#{@user.id}") %>
+
+<% if @post.user_id == @current_user.id %>
+  <%= button_to "削除","/posts/#{@post.id}/destroy" %>
+<% end %>
+
+
+<% @post.edits.each do |edit| %>
+  <li><%= link_to(edit.editer_name, "/users/#{@user.id}") %>
+  <%= edit.created_at.strftime('%Y/%m/%d') %>
+  <%= edit.edit_text %>
+  </li>
+<% end %>
+
+
+

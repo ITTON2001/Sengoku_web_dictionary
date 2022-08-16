@@ -1,0 +1,6 @@
+<h1>ユーザー一覧 作成用</h1>
+
+<% @users.each do |user| %>
+  <%= link_to(user.name, "/users/#{user.id}") %>
+  <%= link_to(user.email, "/users/#{user.id}") %>
+<% end %>

@@ -1,0 +1,8 @@
+<h1>地図一覧選択</h1>
+
+<% @maps.each do |map| %>
+  <li>
+    <%= map.map_name %>
+    <%= map.id %>
+  </li>
+<% end %>

@@ -1,0 +1,288 @@
+<h1><%= @map_name %></h1>
+
+<% if @map_name == "東北地方" %>
+  <div class="map">
+    <div class="map_img_touhoku">
+      <%= image_tag '/map_images/東北 選択2 確定.png' %>
+      <div class="map_touhoku_choice">
+        <div class="map_choice_mutu">
+          <%= link_to("陸奥","/陸奥/詳細") %>
+        </div>
+        <div class="map_choice_rikucyu">
+          <%= link_to("陸中","/陸中/詳細") %>
+        </div>
+        <div class="map_choice_rikuzen">
+          <%= link_to("陸前","/陸前/詳細") %>
+        </div>
+        <div class="map_choice_ugo">
+          <%= link_to("羽後","/羽後/詳細") %>
+        </div>
+        <div class="map_choice_uzen">
+          <%= link_to("羽前","/羽前/詳細") %>
+        </div>
+        <div class="map_choice_iwaki">
+          <%= link_to("磐城","/磐城/詳細") %>
+        </div>
+        <div class="map_choice_iwashiro">
+          <%= link_to("岩代","/岩代/詳細") %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% elsif @map_name == "関東地方" %>
+  <div class="map">
+    <div class="map_img_kanto">
+      <%= image_tag '/map_images/関東 選択 確定.png' %>
+      <div class="map_kanto_choice">
+        <div class="map_choice_hitachi">
+          <%= link_to("常陸","/常陸/詳細") %>
+        </div>
+        <div class="map_choice_shimotuke">
+          <%= link_to("下野","/下野/詳細") %>
+        </div>
+        <div class="map_choice_kouzuke">
+          <%= link_to("上野","/上野/詳細") %>
+        </div>
+        <div class="map_choice_shimofusa">
+          <%= link_to("下総","/下総/詳細") %>
+        </div>
+        <div class="map_choice_kazusa">
+          <%= link_to("上総","/上総/詳細") %>
+        </div>
+        <div class="map_choice_awa">
+          <%= link_to("安房","/安房/詳細") %>
+        </div>
+        <div class="map_choice_musashi">
+          <%= link_to("武蔵","/武蔵/詳細") %>
+        </div>
+        <div class="map_choice_sagami">
+          <%= link_to("相模","/相模/詳細") %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% elsif @map_name == "北陸地方" %>
+  <div class="map">
+    <div class="map_img_hokuriku">
+      <%= image_tag '/map_images/北陸 選択 確定.png' %>
+      <div class="map_hokuriku_choice">
+        <div class="map_choice_echigo">
+          <%= link_to("越後","/越後/詳細") %>
+        </div>
+        <div class="map_choice_eccyu">
+          <%= link_to("越中","/越中/詳細") %>
+        </div>
+        <div class="map_choice_noto">
+          <%= link_to("能登","/能登/詳細") %>
+        </div>
+        <div class="map_choice_kaga">
+          <%= link_to("加賀","/加賀/詳細") %>
+        </div>
+        <div class="map_choice_echizen">
+          <%= link_to("越前","/越前/詳細") %>
+        </div>
+        <div class="map_choice_wakasa">
+          <%= link_to("若狭","/若狭/詳細") %>
+        </div>
+        <div class="map_choice_sado">
+          <%= link_to("佐渡","/佐渡/詳細") %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% elsif @map_name == "中部地方" %>
+  <div class="map">
+    <div class="map_img_cyubu">
+      <%= image_tag '/map_images/中部 選択 確定.png' %>
+      <div class="map_cyubu_choice">
+        <div class="map_choice_kai">
+          <%= link_to("甲斐","/甲斐/詳細") %>
+        </div>
+        <div class="map_choice_suruga">
+          <%= link_to("駿河","/駿河/詳細") %>
+        </div>
+        <div class="map_choice_izu">
+          <%= link_to("伊豆","/伊豆/詳細") %>
+        </div>
+        <div class="map_choice_shinano">
+          <%= link_to("信濃","/信濃/詳細") %>
+        </div>
+        <div class="map_choice_totoumi">
+          <%= link_to("遠江","/遠江/詳細") %>
+        </div>
+        <div class="map_choice_mikawa">
+          <%= link_to("三河","/三河/詳細") %>
+        </div>
+        <div class="map_choice_owari">
+          <%= link_to("尾張","/尾張/詳細") %>
+        </div>
+        <div class="map_choice_mino">
+          <%= link_to("美濃","/美濃/詳細") %>
+        </div>
+        <div class="map_choice_hida">
+          <%= link_to("飛騨","/飛騨/詳細") %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% elsif @map_name == "近畿地方" %>
+  <div class="map">
+    <div class="map_img_kinki">
+      <%= image_tag '/map_images/近畿 選択 確定.png' %>
+      <div class="map_kinki_choice">
+        <div class="map_choice_oumi">
+          <%= link_to("近江","/近江/詳細") %>
+        </div>
+        <div class="map_choice_ise">
+          <%= link_to("伊勢","/伊勢/詳細") %>
+        </div>
+        <div class="map_choice_shima">
+          <%= link_to("志摩","/志摩/詳細") %>
+        </div>
+        <div class="map_choice_iga">
+          <%= link_to("伊賀","/伊賀/詳細") %>
+        </div>
+        <div class="map_choice_yamato">
+          <%= link_to("大和","/大和/詳細") %>
+        </div>
+        <div class="map_choice_kii">
+          <%= link_to("紀伊","/紀伊/詳細") %>
+        </div>
+        <div class="map_choice_waizumi">
+          <%= link_to("和泉","/和泉/詳細") %>
+        </div>
+        <div class="map_choice_kawachi">
+          <%= link_to("河内","/河内/詳細") %>
+        </div>
+        <div class="map_choice_yamashiro">
+          <%= link_to("山城","/山城/詳細") %>
+        </div>
+        <div class="map_choice_settu">
+          <%= link_to("摂津","/摂津/詳細") %>
+        </div>
+        <div class="map_choice_tanba">
+          <%= link_to("丹波","/丹波/詳細") %>
+        </div>
+        <div class="map_choice_tango">
+          <%= link_to("丹後","/丹後/詳細") %>
+        </div>
+        <div class="map_choice_tazima">
+          <%= link_to("但馬","/但馬/詳細") %>
+        </div>
+        <div class="map_choice_harima">
+          <%= link_to("播磨","/播磨/詳細") %>
+        </div>
+        <div class="map_choice_awazi">
+          <%= link_to("淡路","/淡路/詳細") %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% elsif @map_name == "中国地方" %>
+  <div class="map">
+    <div class="map_img_cyugoku">
+      <%= image_tag '/map_images/中国 選択 確定.png' %>
+      <div class="map_cyugoku_choice">
+        <div class="map_choice_inaba">
+          <%= link_to("因幡","/因幡/詳細") %>
+        </div>
+        <div class="map_choice_misaka">
+          <%= link_to("美作","/美作/詳細") %>
+        </div>
+        <div class="map_choice_bizen">
+          <%= link_to("備前","/備前/詳細") %>
+        </div>
+        <div class="map_choice_biccyu">
+          <%= link_to("備中","/備中/詳細") %>
+        </div>
+        <div class="map_choice_bingo">
+          <%= link_to("備後","/備後/詳細") %>
+        </div>
+        <div class="map_choice_aki">
+          <%= link_to("安芸","/安芸/詳細") %>
+        </div>
+        <div class="map_choice_suou">
+          <%= link_to("周防","/周防/詳細") %>
+        </div>
+        <div class="map_choice_houki">
+          <%= link_to("伯耆","/伯耆/詳細") %>
+        </div>
+        <div class="map_choice_izumo">
+          <%= link_to("出雲","/出雲/詳細") %>
+        </div>
+        <div class="map_choice_iwami">
+          <%= link_to("石見","/石見/詳細") %>
+        </div>
+        <div class="map_choice_nagato">
+          <%= link_to("長門","/長門/詳細") %>
+        </div>
+        <div class="map_choice_oki">
+          <%= link_to("隠岐","/隠岐/詳細") %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% elsif @map_name == "四国地方" %>
+  <div class="map">
+    <div class="map_img_sikoku">
+      <%= image_tag '/map_images/四国 選択 確定.png' %>
+      <div class="map_sikoku_choice">
+        <div class="map_choice_sanuki">
+          <%= link_to("讃岐","/讃岐/詳細") %>
+        </div>
+        <div class="map_choice_awa_shikoku">
+          <%= link_to("阿波","/阿波/詳細") %>
+        </div>
+        <div class="map_choice_iyo">
+          <%= link_to("伊予","/伊予/詳細") %>
+        </div>
+        <div class="map_choice_tosa">
+          <%= link_to("土佐","/土佐/詳細") %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% elsif @map_name == "九州地方" %>
+  <div class="map">
+    <div class="map_img_kyusyu">
+      <%= image_tag '/map_images/九州 選択 確定.png' %>
+      <div class="map_kyusyu_choice">
+        <div class="map_choice_buzen">
+          <%= link_to("豊前","/豊前/詳細") %>
+        </div>
+        <div class="map_choice_bungo">
+          <%= link_to("豊後","/豊後/詳細") %>
+        </div>
+        <div class="map_choice_hyuga">
+          <%= link_to("日向","/日向/詳細") %>
+        </div>
+        <div class="map_choice_osumi">
+          <%= link_to("大隅","/大隅/詳細") %>
+        </div>
+        <div class="map_choice_chikuzen">
+          <%= link_to("筑前","/筑前/詳細") %>
+        </div>
+        <div class="map_choice_chikugo">
+          <%= link_to("筑後","/筑後/詳細") %>
+        </div>
+        <div class="map_choice_hizen">
+          <%= link_to("肥前","/肥前/詳細") %>
+        </div>
+        <div class="map_choice_higo">
+          <%= link_to("肥後","/肥後/詳細") %>
+        </div>
+        <div class="map_choice_satuma">
+          <%= link_to("薩摩","/薩摩/詳細") %>
+        </div>
+        <div class="map_choice_iki">
+          <%= link_to("壱岐","/壱岐/詳細") %>
+        </div>
+        <div class="map_choice_tushima">
+          <%= link_to("対馬","/対馬/詳細") %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<% end %>

@@ -1,0 +1,53 @@
+<h1><%= @map_name %></h1>
+
+<% if @map_name == "東北地方" %>
+  <div class="map">
+    <div class="map_img_touhoku">
+      <img src="map_images/東北 選択2 確定.png">
+    </div>
+  </div>
+<% elsif @map_name == "関東地方" %>
+  <div class="map">
+    <div class="map_img_kanto">
+      <img src="map_images/関東 選択 確定.png">
+    </div>
+  </div>
+  <% elsif @map_name == "北陸地方" %>
+  <div class="map">
+    <div class="map_img_hokuriku">
+      <img src="map_images/北陸 選択 確定.png">
+    </div>
+  </div>
+<% elsif @map_name == "中部地方" %>
+  <div class="map">
+    <div class="map_img_cyubu">
+      <img src="map_images/中部 選択 確定.png">
+    </div>
+  </div>
+<% elsif @map_name == "近畿地方" %>
+  <div class="map">
+    <div class="map_img_kinki">
+      <img src="map_images/近畿 選択 確定.png">
+    </div>
+  </div>
+<% elsif @map_name == "中国地方" %>
+  <div class="map">
+    <div class="map_img_cyugoku">
+      <img src="map_images/中国 選択 確定.png">
+    </div>
+  </div>
+<% elsif @map_name == "四国地方" %>
+  <div class="map">
+    <div class="map_img_sikoku">
+      <img src="map_images/四国 選択 確定.png">
+    </div>
+  </div>
+  <% elsif @map_name == "九州地方" %>
+  <div class="map">
+    <div class="map_img_kyusyu">
+      <img src="map_images/九州 選択 確定.png">
+    </div>
+  </div>
+
+
+<% end %>

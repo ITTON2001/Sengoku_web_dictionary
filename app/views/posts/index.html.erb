@@ -1,0 +1,25 @@
+<h1><%= @map_name %></h1>
+
+
+<% if @posts.none? %>
+  <p>まだ投稿がありません</p>
+  <p>早速投稿してみましょう！</p>
+<% else %>
+  <div class="post_index">
+    <table border="2">
+      <tr>
+        <th></th>
+        <th>名前</th>
+        <th>説明</th>
+      </tr>
+
+        <% @posts.each do |post| %>
+        <tr>
+            <td><%= image_tag "/post_images/#{post.post_image}" %></td>
+            <td><%= link_to(post.post_name, "/#{post.map_id}/詳細/#{post.id}" ) %></td>
+            <td><%= post.mini_content %></td>
+        </tr>
+        <% end %>
+    </table>
+  </div>
+<% end %>
