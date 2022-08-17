@@ -3,6 +3,7 @@
   <head>
     <title>戦国人名web辞典</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="https://kit.fontawesome.com/91f3b936b9.js" crossorigin="anonymous"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -47,7 +48,7 @@
             <%= link_to("新規投稿", "/posts/new") %>
           </li>
           <li>
-            <%= link_to("ログアウト", "/logout",{method: "post"}) %>
+            <%= link_to("ログアウト", "/logout",{method: :post}) %>
           </li>
 
         <% else %>

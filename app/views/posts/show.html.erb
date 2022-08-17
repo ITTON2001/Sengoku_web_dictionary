@@ -8,7 +8,19 @@
 <%= @post.mini_content %>
 <%= @post.content %>
 
-<%= link_to "編集","/#{@post.map_id}/詳細/#{@post.id}/edit" %>
+<% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+  <%= button_to("/likes/#{@post.id}/destroy") do %>
+    <span class="fa-solid fa-lightbulb">評価済み</span>
+  <% end %>
+<% else %>
+  <%= button_to("/likes/#{@post.id}/create") do %>
+    <span class="fa-regular fa-lightbulb">タメになった！</span>
+  <% end %>
+<% end %>
+
+<%= @likes_count %>
+
+<%= link_to "編集","/posts/#{@post.id}/edit" %>
 
 <div class="user_image">
   <%= image_tag "/user_images/#{@user.image_name}" %>

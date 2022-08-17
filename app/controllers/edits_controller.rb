@@ -15,7 +15,7 @@ class EditsController < ApplicationController
     )
     @edit.save
     flash[:success] = "投稿を編集しました"
-    redirect_to ("/")
+    redirect_to ("/posts/#{params[:post_id]}")
   end
 
   def show

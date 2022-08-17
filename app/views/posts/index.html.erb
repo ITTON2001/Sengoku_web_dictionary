@@ -16,7 +16,7 @@
         <% @posts.each do |post| %>
         <tr>
             <td><%= image_tag "/post_images/#{post.post_image}" %></td>
-            <td><%= link_to(post.post_name, "/#{post.map_id}/詳細/#{post.id}" ) %></td>
+            <td><%= link_to(post.post_name, "/posts/#{post.id}" ) %></td>
             <td><%= post.mini_content %></td>
         </tr>
         <% end %>

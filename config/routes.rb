@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   #postsのroute
   get 'posts/new' => "posts#new"
   get ':map_name/詳細' => "posts#index"
-  get ':map_name/詳細/:id' => "posts#show"
-  get ':map_name/詳細/:id/edit' => "posts#edit"
+  get 'posts/:id' => "posts#show"
+  get 'posts/:id/edit' => "posts#edit"
   post "posts/create" => "posts#create"
   post "posts/:id/update" => "posts#update"
   post "posts/:id/destroy" => "posts#destroy"
@@ -24,11 +24,16 @@ Rails.application.routes.draw do
   get "edits/:id" => "edits#show"
   post "edits/create" => "edits#create"
 
+  #likeのroute
+  get "users/:id/likes" => "users#likes"
+  post "likes/:post_id/create" => "likes#create"
+  post "likes/:post_id/destroy" => "likes#destroy"
+
   #homeのroute
   get '/' => "home#top"
   get "about" => "home#about"
   get "一覧" => "home#index"
-  get ":map_name" => "home#show"
+  get "maps/:map_name" => "home#show"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
