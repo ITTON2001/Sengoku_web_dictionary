@@ -1,0 +1,44 @@
+/* ログイン画面 */
+.login_form{
+  height: 458px;
+  width: 400px;
+  text-align:center;
+  margin:0 auto;
+}
+
+.login_form_content{
+  margin-top: 20px;
+}
+
+.login_form form{
+  margin-top: 100px;
+  background-color: white;
+  border: solid;
+}
+
+.login_button{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  flex-flow: column;
+}
+
+.login_button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  flex-flow: column;
+}
+
+.login_button input {
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color:#00FF99;
+  border-radius: 3px;
+  border-width: 1px;
+  transition:all 0.5s;
+}
+
+.login_button input:hover {
+  cursor: pointer;
+  background-color:#008000;
+  color: white;
+}

@@ -2,13 +2,18 @@
   <li><%= @error_message %></li>
 <% end %>
 
+<div class = "login_form">
+  <%= form_tag("/login") do %>
+    <div class = "login_form_content">
+      <p>メールアドレス</p>
+      <input name="email" value="<%= @email %>">
 
-<%= form_tag("/login") do %>
+      <p>パスワード</p>
+      <input type="password" name="password" value="<%= @password %>">
 
-  <p>メールアドレス</p>
-  <input name="email" value="<%= @email %>">
-
-  <p>パスワード</p>
-  <input type="password" name="password" value="<%= @password %>">
-  <input type="submit" value="ログイン">
-<% end %>
+      <div class = "login_button">
+        <input type="submit" value="ログイン">
+      </div>
+    </div>
+  <% end %>
+</div>

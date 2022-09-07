@@ -1,5 +1,6 @@
-<h1>Home#top</h1>
-<p>Find me in app/views/home/top.html.erb</p>
+<h1>ようこそ！<%= @current_user.name %>さん！</h1>
+<p>調べたい地域を選択してください</p>
+
 
 
 <div class="map">
@@ -35,10 +36,11 @@
         <%= link_to("九州地方","/maps/九州地方") %>
       </div>
       <div class="map_choice_ryukyu">
-        <%= link_to("琉球(沖縄)","/琉球(沖縄)/詳細") %>
+        <%= link_to("琉球   (沖縄)","/琉球(沖縄)/詳細") %>
+      </div>
+      <div class="map_index">
+        <%= link_to("一覧から選ぶ","/一覧") %>
       </div>
     </div>
   </div>
 </div>
-
-<%= link_to("一覧から選ぶ","/一覧") %>

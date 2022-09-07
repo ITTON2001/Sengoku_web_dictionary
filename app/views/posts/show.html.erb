@@ -1,43 +1,54 @@
-<h1> <%= @post.post_name %> </h1>
+<div class = "post_show">
+  <div class="post_top_content">
+    <h1> <%= @post.post_name %> </h1>
+    <div class="post_image">
+      <%= image_tag "/post_images/#{@post.post_image}" %>
+    </div>
 
-<div class="post_image">
-  <%= image_tag "/post_images/#{@post.post_image}" %>
+    <li>出身地/活躍地</li>
+    <%= @post.map_id %>
+    <li>紹介文</li>
+    <%= @post.mini_content %>
+
+    <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+      <%= button_to("/likes/#{@post.id}/destroy") do %>
+        <span class="fa-solid fa-lightbulb">評価済み</span><%= @likes_count %>
+      <% end %>
+    <% else %>
+      <%= button_to("/likes/#{@post.id}/create") do %>
+        <span class="fa-regular fa-lightbulb">タメになった！</span><%= @likes_count %>
+      <% end %>
+    <% end %>
+
+    <p>投稿作成者</p>
+      <%= link_to(@user.name, "/users/#{@user.id}") %>
+    <div class="user_image">
+      <%= image_tag "/user_images/#{@user.image_name}" %>
+    </div>
+
+    <% if @post.user_id == @current_user.id %>
+      <%= button_to "削除","/posts/#{@post.id}/destroy" %>
+    <% end %>
+
+    <%= link_to "編集","/posts/#{@post.id}/edit" %>
+  </div>
+
+  <div class="post_content">
+    <p>解説</p>
+    <%= @post.content %>
+  </div>
+
 </div>
 
-<%= @post.map_id %>
-<%= @post.mini_content %>
-<%= @post.content %>
-
-<% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
-  <%= button_to("/likes/#{@post.id}/destroy") do %>
-    <span class="fa-solid fa-lightbulb">評価済み</span>
+<div class="post_edit">
+  <p>編集履歴</p>
+    <% @post.edits.each do |edit| %>
+    <li><%= link_to(edit.editer_name, "/users/#{@user.id}") %>
+      <%= edit.created_at.strftime('%Y/%m/%d') %>
+      <%= edit.edit_text %>
+    </li>
   <% end %>
-<% else %>
-  <%= button_to("/likes/#{@post.id}/create") do %>
-    <span class="fa-regular fa-lightbulb">タメになった！</span>
-  <% end %>
-<% end %>
-
-<%= @likes_count %>
-
-<%= link_to "編集","/posts/#{@post.id}/edit" %>
-
-<div class="user_image">
-  <%= image_tag "/user_images/#{@user.image_name}" %>
 </div>
-<%= link_to(@user.name, "/users/#{@user.id}") %>
-
-<% if @post.user_id == @current_user.id %>
-  <%= button_to "削除","/posts/#{@post.id}/destroy" %>
-<% end %>
-
-
-<% @post.edits.each do |edit| %>
-  <li><%= link_to(edit.editer_name, "/users/#{@user.id}") %>
-  <%= edit.created_at.strftime('%Y/%m/%d') %>
-  <%= edit.edit_text %>
-  </li>
-<% end %>
 
 
 

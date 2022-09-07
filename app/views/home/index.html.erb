@@ -1,8 +1,114 @@
 <h1>地図一覧選択</h1>
+<a>調べたい地域を選択してください</a>
 
-<% @maps.each do |map| %>
-  <li>
-    <%= map.map_name %>
-    <%= map.id %>
-  </li>
-<% end %>
+<div class="map_index_choice">
+  <div class="map_index_ezo">
+    <p>蝦夷(北海道)</p>
+    <table border = "1">
+      <% @ezomaps.each do |map| %>
+        <tr>
+          <td><%= link_to(map.map_name,"/#{map.map_name}/詳細") %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <div class="map_index_touhoku">
+    <p>東北地方</p>
+    <table border = "1">
+        <% @touhokumaps.each do |map| %>
+          <tr>
+            <td><%= link_to(map.map_name,"/#{map.map_name}/詳細") %></td>
+          </tr>
+        <% end %>
+      </table>
+  </div>
+
+  <div class="map_index_kanto">
+    <p>関東地方</p>
+    <table border = "1">
+      <% @kantomaps.each do |map| %>
+        <tr>
+          <td><%= link_to(map.map_name,"/#{map.map_name}/詳細") %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <div class="map_index_hokuriku">
+    <p>北陸地方</p>
+    <table border = "1">
+      <% @hokurikumaps.each do |map| %>
+        <tr>
+          <td><%= link_to(map.map_name,"/#{map.map_name}/詳細") %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <div class="map_index_cyubu">
+    <p>中部地方</p>
+    <table border = "1">
+      <% @cyubumaps.each do |map| %>
+        <tr>
+          <td><%= link_to(map.map_name,"/#{map.map_name}/詳細") %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <div class="map_index_kinki">
+    <p>近畿地方</p>
+    <table border = "1">
+      <% @kinkimaps.each do |map| %>
+        <tr>
+          <td><%= link_to(map.map_name,"/#{map.map_name}/詳細") %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <div class="map_index_cyugoku">
+    <p>中国地方</p>
+    <table border = "1">
+      <% @cyugokumaps.each do |map| %>
+        <tr>
+          <td><%= link_to(map.map_name,"/#{map.map_name}/詳細") %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <div class="map_index_shikoku">
+    <p>四国地方</p>
+    <table border = "1">
+      <% @shikokumaps.each do |map| %>
+        <tr>
+          <td><%= link_to(map.map_name,"/#{map.map_name}/詳細") %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <div class="map_index_kyusyu">
+    <p>九州地方</p>
+    <table border = "1">
+      <% @kyusyumaps.each do |map| %>
+        <tr>
+          <td><%= link_to(map.map_name,"/#{map.map_name}/詳細") %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <div class="map_index_ryukyu">
+    <p>琉球(沖縄)</p>
+    <table border = "1">
+      <% @ryukyumaps.each do |map| %>
+        <tr>
+          <td><%= link_to(map.map_name,"/#{map.map_name}/詳細") %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

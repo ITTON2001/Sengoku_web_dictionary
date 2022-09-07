@@ -1,0 +1,30 @@
+/* 人物一覧画面 */
+.post_index table{
+  margin:0 auto;
+  margin-bottom: 50px;
+  background-color: white;
+}
+
+.post_index img{
+  width: 100px;
+  height: 100px;
+}
+
+/* 人物詳細画面 */
+.post_top_content{
+  width: 200px;
+}
+.post_image img{
+  width: 200px;
+  height: 200px;
+}
+
+.post_show{
+  display: flex;
+}
+
+.user_image img{
+  width: 35%;
+  height: 35%;
+}
+

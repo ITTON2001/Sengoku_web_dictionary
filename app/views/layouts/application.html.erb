@@ -8,62 +8,62 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "user", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "post", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <% flash.each do |message_type, message| %>
-      <%= message %>
-    <% end %>
-
     <header>
-
-    <% if session[:user_id] %>
-      <div class="header-logo">
-        <%= link_to("戦国人名web辞典","/") %>
-      </div>
-    <% else %>
-      <div class="header-logo">
-        <a>戦国人名web辞典</a>
-      </div>
-    <% end %>
-
-      <ul class="header-menus">
-        <% if @current_user %>
-          <li>
-            こんにちは
-            <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
-            さん
-          </li>
-          <li>
-            <%= link_to("トップ", "/") %>
-          </li>
-          <li>
-            <%= link_to("サイトについて", "/about") %>
-          </li>
-          <li>
-            <%= link_to("ユーザー一覧", "/users/index") %>
-          </li>
-          <li>
-            <%= link_to("新規投稿", "/posts/new") %>
-          </li>
-          <li>
-            <%= link_to("ログアウト", "/logout",{method: :post}) %>
-          </li>
-
+      <div class="header_contents">
+        <% if session[:user_id] %>
+          <div class="header-logo">
+            <%= link_to("戦国人名web辞典","/") %>
+          </div>
         <% else %>
-          <li>
-            <%= link_to("新規登録", "/signup") %>
-          </li>
-          <li>
-            <%= link_to("ログイン", "/login") %>
-          </li>
-          <li>
-            <%= link_to("サイトについて", "/about") %>
-          </li>
+          <div class="header-logo">
+          <%= link_to("戦国人名web辞典","/login") %>
+          </div>
         <% end %>
-      </ul>
+
+          <ul class="header-menus">
+            <% if @current_user %>
+              <li>
+                <%= link_to("トップ", "/") %>
+              </li>
+              <li>
+                <%= link_to("ユーザーホーム", "/users/#{@current_user.id}") %>
+              </li>
+              <li>
+                <%= link_to("新規投稿", "/posts/new") %>
+              </li>
+              <li>
+                <%= link_to("サイトについて", "/about") %>
+              </li>
+              <li>
+                <%= link_to("ログアウト", "/logout",{method: :post}) %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to("新規登録", "/signup") %>
+              </li>
+              <li>
+                <%= link_to("ログイン", "/login") %>
+              </li>
+              <li>
+                <%= link_to("サイトについて", "/about") %>
+              </li>
+            <% end %>
+          </ul>
+      </div>
     </header>
+
+    <div class = "flash_message">
+      <% flash.each do |message_type, message| %>
+        <%= message %>
+      <% end %>
+    </div>
+
     <%= yield %>
     <footer>
       <%= image_tag "/logo_images/title_image.jpg" %>
