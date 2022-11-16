@@ -71,6 +71,15 @@ body{
   left: 5%;
 }
 
+.opening_message a{
+  color: black;
+}
+
+.opening_message a:hover{
+  text-decoration: underline;
+ text-decoration-color: black;
+}
+
 .opening_message h1{
   margin-bottom: -20px;
 }
@@ -195,7 +204,6 @@ body{
   width: 250px;
   top: 23%;
   left: 6%;
-  font-size: 50px;
   padding: 5px;
   padding-left: 10px;
   padding-right: 10px;
@@ -259,27 +267,6 @@ body{
 
 .map_img_touhoku a{
   position: absolute;
-}
-
-.map a{
-  font-family: 青柳隷書SIMO2_O;
-  font-size: 20px;
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  color: white;
-  position: absolute;
-  border-radius: 5px;
-  transition:all 1s;
-}
-
-.map a:hover{
-  background-color: white;
-  color: black
-}
-
-.map a:active{
-  box-shadow: none;
 }
 
 .map_img_touhoku a{
