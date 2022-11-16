@@ -1,13 +1,18 @@
-<h1>ようこそ！<%= @current_user.name %>さん！</h1>
-<p>調べたい地域を選択してください</p>
-
 
 
 <div class="map">
   <div class="map_image_japan">
     <%= image_tag '/map_images/日本地図.png' %>
 
+    <div class="opening_message">
+      <h1>ようこそ！<%= @current_user.name %>さん！</h1>
+      <p>調べたい地域をクリックしてみましょう！</p>
+    </div>
+
     <div class="map_choice">
+      <div class="map_index">
+        <%= link_to("一覧から選ぶ","/一覧") %>
+      </div>
       <div class="map_choice_hokkaido">
         <%= link_to("蝦夷(北海道)","/蝦夷(北海道)/詳細") %>
       </div>
@@ -38,9 +43,10 @@
       <div class="map_choice_ryukyu">
         <%= link_to("琉球   (沖縄)","/琉球(沖縄)/詳細") %>
       </div>
-      <div class="map_index">
-        <%= link_to("一覧から選ぶ","/一覧") %>
-      </div>
     </div>
   </div>
+</div>
+
+<div class="create_post">
+  <%= link_to("新規投稿", "/posts/new") %>
 </div>

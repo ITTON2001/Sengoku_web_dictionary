@@ -1,25 +1,34 @@
-<p>編集</p>
+<div class="post_edit">
 
-<%= form_tag("/posts/#{@post.id}/update",{multipart: true}) do %>
-  <p>一言紹介</p>
-  <textarea name="mini_content"><%= @post.mini_content %></textarea>
-  <p>説明</p>
-  <textarea name="content"><%= @post.content %></textarea>
-  <p>出身地/活躍地</p>
-  <select name="map_id">
-    <option><%= @post.map_id %></option>
-    <% @maps.each do |map| %>
-      <option>
-      <%= map.id %>
-      <%= map.map_name %>
-      </option>
-    <% end %>
-  </select>
+  <h1>編集</h1>
 
-  <p>画像</p>
-  <input name="image" type="file">
+  <%= form_tag("/posts/#{@post.id}/update",{multipart: true}) do %>
+    <div class="post_edit_mini_content">
+      <p>一言紹介</p>
+      <textarea name="mini_content"><%= @post.mini_content %></textarea>
+    </div>
+    <p>出身地/活躍地</p>
+    <select name="map_id">
+      <option><%= @post.map_id %></option>
+      <% @maps.each do |map| %>
+        <option>
+        <%= map.id %>
+        <%= map.map_name %>
+        </option>
+      <% end %>
+    </select>
 
-  <input type="submit" value="保存">
-<% end %>
+    <p>画像</p>
+    <input name="image" type="file">
 
+    <div class="post_edit_text">
+      <p>説明</p>
+      <textarea name="content"><%= @post.content %></textarea>
+    </div>
+
+    <div class="post_edit_submit">
+      <input type="submit" value="保存">
+    </div>
+  <% end %>
+</div>
 

@@ -1,11 +1,17 @@
-<h1>編集が完了しました</h1>
+<div class="edit_complete">
 
-<%= form_tag("/edits/create") do %>
-  <h1>変更記録</h1>
-  <textarea name="edit_text"></textarea>
+  <%= form_tag("/edits/create") do %>
+    <h1>変更記録</h1>
+    <a>変更したことを記入してください</a>
+    <textarea name="edit_text"></textarea>
+    <!-- 下のテキストボックスは投稿と編集の紐づけを行うため見えないようにしている-->
+    <div class="edit_complete_id">
+      <textarea name="post_id"><%= @edit.post_id %></textarea>
+    </div>
+    <div class="edit_complete_submit">
+      <input type="submit" value="完了">
+    </div>
+  <% end %>
+</div>
 
-  <textarea name="post_id"><%= @edit.post_id %></textarea>
-  <input type="submit" value="完了">
-<% end %>
 
-<%= @edit.post_id %>

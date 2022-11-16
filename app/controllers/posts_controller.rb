@@ -1,11 +1,13 @@
 class PostsController < ApplicationController
   before_action:authenticate_user
 
+  #新しい投稿を作成
   def new
     @maps = Map.all
     @post = Post.new
   end
 
+  #新しく作った投稿をdbに登録
   def create
     @maps = Map.all
     @post = Post.new(
@@ -17,12 +19,14 @@ class PostsController < ApplicationController
       post_image:"no_post_image.png"
     )
 
+    #画像を追加した時の処理(デフォルトはno_post_image.png)
     if params[:image]
       @post.post_image = "#{@post.id}.jpg"
       image = params[:image]
       File.binwrite("public/post_images/#{@post.post_image}",image.read)
     end
 
+    #投稿の保存
     if @post.save
       flash[:success] = "投稿を作成しました"
       redirect_to("/")
@@ -32,11 +36,13 @@ class PostsController < ApplicationController
     end
   end
 
+  #投稿の一覧を表示
   def index
     @posts = Post.where(map_id: params[:map_name])
     @map_name = params[:map_name]
   end
 
+  #各投稿のデータを表示
   def show
     @posts = Post.all
     @edits = Edit.all
@@ -45,11 +51,13 @@ class PostsController < ApplicationController
     @likes_count = Like.where(post_id: @post.id).count
   end
 
+  #編集機能の追加
   def edit
     @maps = Map.all
     @post = Post.find_by(id: params[:id])
   end
 
+  #編集機能
   def update
     @maps = Map.all
     @post = Post.find_by(id: params[:id])
@@ -64,7 +72,6 @@ class PostsController < ApplicationController
     end
 
     if @post.save
-
       redirect_to ("/users/#{@post.id}/edits/new")
     else
       flash.now[:danger] = "編集を失敗しました"
@@ -72,6 +79,7 @@ class PostsController < ApplicationController
     end
   end
 
+  #投稿の削除
   def destroy
     @post = Post.find_by(id: params[:id])
     @post.destroy

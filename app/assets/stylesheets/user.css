@@ -14,6 +14,12 @@
   margin-top: 100px;
   background-color: white;
   border: solid;
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+  transition:all 0.5s;
+}
+
+.login_form form:hover{
+  box-shadow: 0 20px 50px 0 rgba(0, 0, 0, .5);
 }
 
 .login_button{
@@ -42,3 +48,106 @@
   background-color:#008000;
   color: white;
 }
+
+.error_message{
+  text-align:center;
+  color: red;
+  padding-bottom: 5px;
+}
+
+/* ユーザー詳細画面 */
+.user_data{
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  border: 2px solid black;
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 500px;
+}
+
+.user_data h2{
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+
+.user_data img{
+  border: 2px solid black;
+}
+
+.edit_user_data a{
+  padding-left: 70px;
+  padding-right: 70px;
+  background-color:#00FF99;
+  border-radius: 3px;
+  border-width: 1px;
+  transition:all 1s;
+}
+
+.edit_user_data a:hover{
+  cursor: pointer;
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+  transform:scale(1.1,1.1);
+}
+
+.user_post_data_top{
+  margin-top: 80px;
+  text-align: center;
+}
+
+.user_post_data_top table{
+  border-collapse:  collapse;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+}
+
+.user_post_data_top a{
+  border: solid 2px;
+  width:  250px;
+  font-size: 25px;
+}
+
+.user_post_data_top_post a{
+  padding-left: 17px;
+  padding-right: 17px;
+  color: black;
+  transition:all 0.5s;
+}
+
+.user_post_data_top_post a:hover{
+  cursor: pointer;
+  color: white;
+  background-color: black;
+}
+
+.user_post_data_top_likes a{
+  padding-left: 17px;
+  padding-right: 17px;
+  color: black;
+  transition:all 0.5s;
+}
+
+.user_post_data_top_likes a:hover{
+  cursor: pointer;
+  color: white;
+  background-color: black;
+}
+
+.post_index h3{
+  margin: auto;
+  width: 200px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: serif;
+  font-size: 30px;
+  border-top: 2px solid rgb(65, 55, 55);
+  border-bottom: 2px solid rgb(65, 55, 55);
+}
+
+
+
+
+

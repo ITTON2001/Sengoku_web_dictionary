@@ -3,24 +3,29 @@ class UsersController < ApplicationController
   before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
   before_action :ensure_correct_user, {only: [:edit, :update]}
 
+  #ユーザーの一覧を表示
   def index
     @users = User.all
   end
 
+  #ユーザーデータの表示
   def show
     @posts = Post.all
     @user = User.find_by(id: params[:id])
   end
 
+  #ユーザーの新規作成
   def new
     @user = User.new
   end
 
+  #ユーザーがタメになったを押した投稿を閲覧可能にする
   def likes
     @user = User.find_by(id: params[:id])
     @likes = Like.where(user_id: @user.id)
   end
 
+  #新規ユーザーをdbに登録する
   def create
     @user = User.new(
       name: params[:name],
@@ -42,10 +47,12 @@ class UsersController < ApplicationController
     end
   end
 
+  #ユーザーを編集する
   def edit
     @user = User.find_by(id: params[:id])
   end
 
+  #ユーザーの編集したものをdbに登録する
   def update
     @user = User.find_by(id: params[:id])
     @user.name = params[:name]
@@ -65,10 +72,11 @@ class UsersController < ApplicationController
     end
   end
 
-
+  #ログインフォームを作る
   def login_form
   end
 
+  #ログイン機能
   def login
     @user = User.find_by(email: params[:email],
                          password: params[:password])
@@ -84,6 +92,7 @@ class UsersController < ApplicationController
     end
   end
 
+  #ログアウト機能
   def logout
     session[:user_id] = nil
     flash[:notice] = "ログアウトしました"

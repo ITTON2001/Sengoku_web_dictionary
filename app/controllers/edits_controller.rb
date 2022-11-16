@@ -1,11 +1,12 @@
 class EditsController < ApplicationController
 
+  #新しく編集する
   def new
     @edit = Edit.new
-
     @edit.post_id = params[:id]
   end
 
+  #編集したものをdbに登録
   def create
     @edit = Edit.new(
       edit_text: params[:edit_text],
@@ -18,6 +19,7 @@ class EditsController < ApplicationController
     redirect_to ("/posts/#{params[:post_id]}")
   end
 
+  #編集したものを表示
   def show
     @edits = Edit.all
     @edit = Edit.find_by(id: params[:id])

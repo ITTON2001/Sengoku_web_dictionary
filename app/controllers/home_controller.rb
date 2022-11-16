@@ -7,6 +7,7 @@ class HomeController < ApplicationController
   def about
   end
 
+  #マップ名一覧
   def index
     @ezomaps = Map.where(id: 1)
     @touhokumaps = Map.where(id: 11..17)
@@ -22,6 +23,7 @@ class HomeController < ApplicationController
     @maps = Map.all
   end
 
+  #マップ名を表示
   def show
     @map_name = params[:map_name]
   end

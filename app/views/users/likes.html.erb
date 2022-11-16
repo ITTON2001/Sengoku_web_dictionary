@@ -1,40 +1,41 @@
-<div class="user_image">
-  <%= image_tag "/user_images/#{@user.image_name}" %>
+<div class="user_data">
+  <div class="user_image">
+    <%= image_tag "/user_images/#{@user.image_name}" %>
+  </div>
+
+  <h2><%= @user.name %></h2>
+
+  <div class="edit_user_data">
+    <% if @user.id == @current_user.id %>
+      <%= link_to("編集","/users/#{@user.id}/edit") %>
+    <% end %>
+  </div>
 </div>
 
-<h2><%= @user.name %></h2>
-<p><%= @user.email %></p>
-
-<% if @user.id == @current_user.id %>
-  <%= link_to("編集","/users/#{@user.id}/edit") %>
-<% end %>
-
-<li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
-<li><%= link_to("評価した投稿", "/users/#{@user.id}/likes") %></li>
-
-<% if @likes.none? %>
-  <p>評価した投稿がありません</p>
-
-<% else %>
-  <div class="post_index">
-    <p>評価した投稿</p>
-    <table border="2">
-      <tr>
-        <th></th>
-        <th>名前</th>
-        <th>説明</th>
-      </tr>
-
-      <% @likes.each do |like| %>
-        <% post = Post.find_by(id: like.post_id) %>
-          <tr>
-              <td><%= image_tag "/post_images/#{post.post_image}" %></td>
-              <td><%= link_to(post.post_name, "/posts/#{post.id}" ) %></td>
-              <td><%= post.mini_content %></td>
-          </tr>
-      <% end %>
+<div class="user_post_data">
+  <div class="user_post_data_top">
+    <table>
+      <th class="user_post_data_top_post"><%= link_to("作成した投稿", "/users/#{@user.id}") %></th>
+      <th class="user_post_data_top_likes"><%= link_to("評価した投稿", "/users/#{@user.id}/likes") %></th>
     </table>
   </div>
 
+  <% if @likes.none? %>
+    <p>評価した投稿がありません</p>
 
-<% end %>
+  <% else %>
+    <div class="post_index">
+      <h3>評価した投稿</h3>
+      <table border="2">
+        <% @likes.each do |like| %>
+          <% post = Post.find_by(id: like.post_id) %>
+            <tr>
+                <th><%= image_tag "/post_images/#{post.post_image}" %></th>
+                <th><%= link_to(post.post_name, "/posts/#{post.id}" ) %></th>
+                <td><%= post.mini_content %></td>
+            </tr>
+        <% end %>
+      </table>
+    </div>
+  <% end %>
+</div>

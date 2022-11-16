@@ -1,6 +1,7 @@
 class LikesController < ApplicationController
   before_action :authenticate_user
 
+  #タメになった！を押せる機能
   def create
     @post = Post.find_by(id: params[:post_id])
     @user = User.find_by(id: @post.user_id)
@@ -12,6 +13,7 @@ class LikesController < ApplicationController
     redirect_to("/posts/#{params[:post_id]}")
   end
 
+  #タメになった！を外せる機能
   def destroy
     @post = Post.find_by(id: params[:post_id])
     @user = User.find_by(id: @post.user_id)
