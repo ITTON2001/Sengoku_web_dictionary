@@ -29,11 +29,11 @@
       <table border="2">
         <% @likes.each do |like| %>
           <% post = Post.find_by(id: like.post_id) %>
-            <tr>
-                <th><%= image_tag "/post_images/#{post.post_image}" %></th>
-                <th><%= link_to(post.post_name, "/posts/#{post.id}" ) %></th>
-                <td><%= post.mini_content %></td>
-            </tr>
+          <tr>
+            <th><%= image_tag "/post_images/#{post.post_image}" %></th>
+            <th><%= link_to(post.post_name, "/posts/#{post.id}" ) %></th>
+            <td><%= post.mini_content %></td>
+          </tr>
         <% end %>
       </table>
     </div>
