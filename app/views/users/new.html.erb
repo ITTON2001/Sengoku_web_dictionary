@@ -1,23 +1,24 @@
-<h1>新規登録</h1>
+<div class="new_user">
 
-<!-- エラーメッセージ -->
-<% @user.errors.full_messages.each do |message| %>
-  <li> <%= message %> </li>
-<% end %>
+  <!-- 新規登録フォーム -->
+    <%= form_tag("/users/create",{multipart: true}) do %>
+      <h1>新規登録</h1>
+      <!-- エラーメッセージ -->
+      <% @user.errors.full_messages.each do |message| %>
+        <li> <%= message %> </li>
+      <% end %>
 
-<!-- 新規登録フォーム -->
-<%= form_tag("/users/create",{multipart: true}) do %>
-  <p>ユーザー名</p>
-  <input name="name" value="<%= @user.name %>">
+      <p>ユーザー名</p>
+      <input name="name" value="<%= @user.name %>">
 
-  <p>メールアドレス</p>
-  <input name="email" value="<%= @user.email %>">
+      <p>メールアドレス</p>
+      <input name="email" value="<%= @user.email %>">
 
-  <p>パスワード</p>
-  <input type="password" name="password" value="<%= @password %>">
+      <p>パスワード</p>
+      <input type="password" name="password" value="<%= @password %>">
 
-  <p>画像</p>
-  <input name="image" type="file">
-
-  <input type="submit" value="新規登録">
-<% end %>
+      <div class = "new_user_button">
+        <input type="submit" value="新規登録">
+      </div>
+    <% end %>
+</div>

@@ -1,3 +1,43 @@
+/* 新規登録画面 */
+.new_user form{
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 150px;
+  text-align: center;
+  background-color: white;
+  border: solid;
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+  transition:all 0.5s;
+}
+
+.new_user_button{
+  margin-top: 30px;
+  margin-bottom: 20px;
+  flex-flow: column;
+}
+
+.new_user_button input {
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color:#00FF99;
+  height: 40px;
+  width: 200px;
+  font-size: 20px;
+  border-radius: 3px;
+  border-width: 1px;
+  transition:all 0.5s;
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+}
+
+.new_user_button input:hover {
+  cursor: pointer;
+  background-color:#008000;
+  color: white;
+  box-shadow: 0 10px 50px 0 rgba(0, 0, 0, .5);
+}
+
+
 /* ログイン画面 */
 .login_form{
   height: 458px;
@@ -28,16 +68,11 @@
   flex-flow: column;
 }
 
-.login_button {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  flex-flow: column;
-}
-
 .login_button input {
   padding-left: 40px;
   padding-right: 40px;
   background-color:#00FF99;
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
   border-radius: 3px;
   border-width: 1px;
   transition:all 0.5s;
@@ -46,6 +81,7 @@
 .login_button input:hover {
   cursor: pointer;
   background-color:#008000;
+  box-shadow: 0 10px 50px 0 rgba(0, 0, 0, .5);
   color: white;
 }
 
