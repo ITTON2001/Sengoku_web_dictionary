@@ -58,7 +58,7 @@
 <div class="post_edit">
   <p>編集履歴</p>
     <% @post.edits.each do |edit| %>
-    <li><%= link_to(edit.editer_name, "/users/#{@user.id}") %>
+    <li><%= link_to(edit.editer_name, "/users/#{edit.editer_id}") %>
       <%= edit.created_at.strftime('%Y/%m/%d') %>
       <%= edit.edit_text %>
     </li>

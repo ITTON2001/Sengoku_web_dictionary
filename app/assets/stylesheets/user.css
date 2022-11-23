@@ -11,6 +11,10 @@
   transition:all 0.5s;
 }
 
+.new_user p{
+  margin-bottom: 5px;
+}
+
 .new_user_button{
   margin-top: 30px;
   margin-bottom: 20px;
@@ -164,6 +168,10 @@
   border: solid 2px;
   width:  250px;
   font-size: 25px;
+}
+
+.user_post_data p{
+  text-align: center;
 }
 
 .user_post_data_top_post a{

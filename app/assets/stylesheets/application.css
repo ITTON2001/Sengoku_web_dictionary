@@ -1007,3 +1007,8 @@ footer img{
 .map_index a:active{
   box-shadow: none;
 }
+
+.video video{
+  width: 80%;
+  margin:0 auto;
+}
