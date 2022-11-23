@@ -1,6 +1,10 @@
 <h1>ユーザー一覧 作成用</h1>
 
-<% @users.each do |user| %>
-  <%= link_to(user.name, "/users/#{user.id}") %>
-  <%= link_to(user.email, "/users/#{user.id}") %>
-<% end %>
+<%= will_paginate @books, :previous_label => ' &lt 前へ', :next_label => '次へ &gt' %>
+<ul class="users">
+  <% @users.each do |user| %>
+    <li>
+      <%= user.name %>
+    </li>
+  <% end %>
+</ul>

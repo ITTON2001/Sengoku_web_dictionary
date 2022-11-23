@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   #ユーザーの一覧を表示
   def index
-    @users = User.all
+    @users = User.paginate(page: params[:page], per_page: 2)
   end
 
   #ユーザーデータの表示
