@@ -4,6 +4,14 @@ class HomeController < ApplicationController
   def top
   end
 
+  def search
+    if params[:search] == nil
+      @posts = Post.all
+    else
+      @posts = Post.where("content || mini_content || post_name || map_id  LIKE ? ",'%' + params[:search] + '%')
+    end
+  end
+
   def about
   end
 

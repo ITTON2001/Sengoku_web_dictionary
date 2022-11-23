@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   get '/' => "home#top"
   get "about" => "home#about"
   get "一覧" => "home#index"
+  get "search" => "home#search"
   get "maps/:map_name" => "home#show"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

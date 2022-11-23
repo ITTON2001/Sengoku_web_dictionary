@@ -1,0 +1,27 @@
+<div class="search">
+    <div class="post_search">
+        <h3>投稿を検索</h3>
+        <%= form_tag({controller:"home",action:"search"}, method: :get) do %>
+        <%= text_field_tag :search %>
+        <%= submit_tag '検索する' %>
+        <% end %>
+    </div>
+
+    <% if @posts.none? %>
+    <p>投稿が見つかりませんでした</p>
+    <p>別のキーワードで検索してみてください</p>
+    <% else %>
+    <div class="post_index">
+        <table border="2">
+
+            <% @posts.each do |post| %>
+            <tr>
+                <th><%= image_tag "/post_images/#{post.post_image}" %></th>
+                <th><%= link_to(post.post_name, "/posts/#{post.id}" ) %></th>
+                <td><%= post.mini_content %></td>
+            </tr>
+            <% end %>
+        </table>
+    </div>
+    <% end %>
+</div>

@@ -202,7 +202,7 @@ body{
   background-color: 	#800080;
   box-shadow: 3px 3px #4B0082;
   width: 250px;
-  top: 23%;
+  top: 28%;
   left: 6%;
   padding: 5px;
   padding-left: 10px;
@@ -958,3 +958,52 @@ footer img{
   margin: 10px;
 }
 
+/* 検索機能 */
+.post_search{
+  margin: 0 auto;
+  text-align: center;
+  background-color: white;
+  width: 30%;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+  transition:all 1s;
+}
+
+.post_search:hover{
+  box-shadow: 0 10px 50px 0 rgba(0, 0, 0, .5);
+}
+
+.post_search h3 {
+  font-size: 30px;
+  margin-top: -5px;
+  margin-bottom: 5px;
+}
+
+.map_search a{
+  font-family: 青柳隷書SIMO2_O;
+  background-color: 	#220080;
+  box-shadow: 3px 3px #000744;
+  width: 250px;
+  top: 23%;
+  left: 6%;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  position: absolute;
+  border-radius: 5px;
+}
+
+.map_index a:hover{
+  background-color: white;
+  color: black
+}
+
+.map_index a:active{
+  box-shadow: none;
+}
