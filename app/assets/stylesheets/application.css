@@ -2,6 +2,12 @@ a {
   text-decoration:none;
 }
 
+.main{
+  height: 100%;
+  width: 100%;
+  margin-bottom: 100px;
+}
+
 .flash_message{
   color: white;
   text-align: center;
@@ -64,6 +70,8 @@ header a:link, header a:visited, header a:hover, header a:active {
 
 /* body */
 body{
+  position: relative;
+  min-height: 100vh;
   margin-bottom: 0%;
   background-image: url(../application_images/body_back.jpg);
   background-size: auto 100%;
@@ -963,7 +971,6 @@ footer{
   background-repeat: no-repeat;
   background-position: 0% 80%;
   background-size: cover;
-  position: absolute;
   bottom: 0;
   z-index: 0;
 }

@@ -1,24 +1,26 @@
-<div class="map_name">
-  <h1><%= @map_name %></h1>
-</div>
-<% if @posts.none? %>
-  <p>まだ投稿がありません</p>
-  <p>早速投稿してみましょう！</p>
-<% else %>
-  <div class="post_index">
-    <table border="2">
-
-        <% @posts.each do |post| %>
-        <tr>
-            <th><%= image_tag "/post_images/#{post.post_image}" %></th>
-            <th><%= link_to(post.post_name, "/posts/#{post.id}" ) %></th>
-            <td><%= post.mini_content %></td>
-        </tr>
-        <% end %>
-    </table>
+<div class="map_post_index">
+  <div class="map_name">
+    <h1><%= @map_name %></h1>
   </div>
-<% end %>
+  <% if @posts.none? %>
+    <p>まだ投稿がありません</p>
+    <p>早速投稿してみましょう！</p>
+  <% else %>
+    <div class="post_index">
+      <table border="2">
 
-<div class="create_post">
-  <%= link_to("新規投稿", "/posts/new") %>
+          <% @posts.each do |post| %>
+          <tr>
+              <th><%= image_tag "/post_images/#{post.post_image}" %></th>
+              <th><%= link_to(post.post_name, "/posts/#{post.id}" ) %></th>
+              <td><%= post.mini_content %></td>
+          </tr>
+          <% end %>
+      </table>
+    </div>
+  <% end %>
+
+  <div class="create_post">
+    <%= link_to("新規投稿", "/posts/new") %>
+  </div>
 </div>

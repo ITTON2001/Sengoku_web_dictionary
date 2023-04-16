@@ -59,13 +59,15 @@
         </div>
       </header>
 
-      <div class = "flash_message">
-        <% flash.each do |message_type, message| %>
-          <%= message %>
-        <% end %>
-      </div>
+      <main>
+        <div class = "flash_message">
+          <% flash.each do |message_type, message| %>
+            <%= message %>
+          <% end %>
+        </div>
+        <%= yield %>
+      </main>
 
-      <%= yield %>
       <footer>
         <%= image_tag "/logo_images/title_image.jpg" %>
       </footer>
