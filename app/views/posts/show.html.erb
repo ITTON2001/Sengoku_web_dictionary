@@ -1,69 +1,76 @@
-<div class = "post_show">
-  <div class="post_top_content">
-    <h1> <%= @post.post_name %> </h1>
-    <div class="post_image">
-      <%= image_tag "/post_images/#{@post.post_image}" %>
-    </div>
-
-    <div class="sub_introduce">
-      <div class="sub_introduce_map">
-        <li>出身地/活躍地</li>
-        <a><%= @post.map_id %></a>
+<div class = "post">
+  <div class = "post_show">
+    <div class="post_top_content">
+      <h1> <%= @post.post_name %> </h1>
+      <div class="post_image">
+        <%= image_tag "/post_images/#{@post.post_image}" %>
       </div>
-      <div class="sub_introduce_content">
-        <li>紹介文</li>
-        <a><%= @post.mini_content %></a>
-      </div>
-    </div>
 
-    <div class="good_button">
-      <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
-        <%= button_to("/likes/#{@post.id}/destroy") do %>
-          <span class="fa-solid fa-lightbulb">評価済み</span><%= @likes_count %>
+      <div class="sub_introduce">
+        <div class="sub_introduce_map">
+          <li>出身地/活躍地</li>
+          <a><%= @post.map_id %></a>
+        </div>
+        <div class="sub_introduce_content">
+          <li>紹介文</li>
+          <a><%= @post.mini_content %></a>
+        </div>
+      </div>
+
+      <div class="good_button">
+        <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+          <%= button_to("/likes/#{@post.id}/destroy") do %>
+            <span class="fa-solid fa-lightbulb">評価済み</span><%= @likes_count %>
+          <% end %>
+        <% else %>
+          <%= button_to("/likes/#{@post.id}/create") do %>
+            <span class="fa-regular fa-lightbulb">タメになった！</span><%= @likes_count %>
+          <% end %>
         <% end %>
-      <% else %>
-        <%= button_to("/likes/#{@post.id}/create") do %>
-          <span class="fa-regular fa-lightbulb">タメになった！</span><%= @likes_count %>
-        <% end %>
+      </div>
+
+      <%= link_to ("/posts/#{@post.id}/edit") do %>
+        <button class="edit_button">編集</button>
       <% end %>
+
+      <div class="post_user_data">
+        <p>投稿作成者</p>
+          <a><%= link_to(@user.name, "/users/#{@user.id}") %></a>
+        <div class="user_image">
+          <%= image_tag "/user_images/#{@user.image_name}" %>
+        </div>
+      </div>
+
+      <div class="destroy_button">
+        <% if @post.user_id == @current_user.id %>
+          <%= button_to "削除","/posts/#{@post.id}/destroy" %>
+        <% end %>
+      </div>
+
     </div>
 
-    <%= link_to ("/posts/#{@post.id}/edit") do %>
-      <button class="edit_button">編集</button>
+    <div class="post_content">
+      <p>概要</p>
+      <a><%=safe_join(@post.content.split("\n"),tag(:br))%></a>
+    </div>
+  </div>
+
+  <div class="post_edit">
+    <p>編集履歴</p>
+    <% if @post.edits.present? %>
+      <% @post.edits.each do |edit| %>
+        <li><%= link_to(edit.editer_name, "/users/#{edit.editer_id}") %>
+          <%= edit.created_at.strftime('%Y/%m/%d') %>
+          <%= edit.edit_text %>
+        </li>
+      <% end %>
+    <% else %>
+      <a>過去に編集された記録はありません</a>
     <% end %>
-
-    <div class="post_user_data">
-      <p>投稿作成者</p>
-        <a><%= link_to(@user.name, "/users/#{@user.id}") %></a>
-      <div class="user_image">
-        <%= image_tag "/user_images/#{@user.image_name}" %>
-      </div>
-    </div>
-
-    <div class="destroy_button">
-      <% if @post.user_id == @current_user.id %>
-        <%= button_to "削除","/posts/#{@post.id}/destroy" %>
-      <% end %>
-    </div>
-
   </div>
-
-  <div class="post_content">
-    <p>概要</p>
-    <a><%=safe_join(@post.content.split("\n"),tag(:br))%></a>
-  </div>
-
 </div>
 
-<div class="post_edit">
-  <p>編集履歴</p>
-    <% @post.edits.each do |edit| %>
-    <li><%= link_to(edit.editer_name, "/users/#{edit.editer_id}") %>
-      <%= edit.created_at.strftime('%Y/%m/%d') %>
-      <%= edit.edit_text %>
-    </li>
-  <% end %>
-</div>
+
 
 
 

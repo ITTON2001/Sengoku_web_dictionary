@@ -33,6 +33,9 @@
 }
 
 /* 人物詳細画面 */
+.post{
+  min-height: 110vh;
+}
 .post_show{
   font-family: serif;
   padding-left: 10px;

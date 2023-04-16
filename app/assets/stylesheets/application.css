@@ -64,6 +64,7 @@ body{
   background-image: url(../application_images/body_back.jpg);
   background-size: auto 100%;
 }
+
 /* top画面 */
 .opening_message{
   position: absolute;
@@ -91,7 +92,7 @@ body{
 .map{
   text-align:center;
   width: 1000px;
-  height: 900px;
+  height: 1000px;
   margin: auto;
 }
 
@@ -226,6 +227,7 @@ body{
   top: 80%;
   left: 75%;
   width: 100%;
+  z-index: 1;
 }
 
 .create_post a{
@@ -941,16 +943,24 @@ body{
   height: 200px;
 }
 
+.wrapper{
+  min-height: 100vh;
+  position: relative;
+}
+
 /* フッター */
-footer{
-  margin-left: -8px;
-  margin-right: -8px;
+footer{  
   text-align:center;
   height: 100px;
+  width: 100%;
   background-image: url(../application_images/footer.jpg);
   background-repeat: no-repeat;
   background-position: 0% 80%;
   background-size: cover;
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+
 }
 
 footer img{
@@ -959,6 +969,10 @@ footer img{
 }
 
 /* 検索機能 */
+.post_index{
+  min-height: 100vh;
+}
+
 .post_search{
   margin: 0 auto;
   text-align: center;
