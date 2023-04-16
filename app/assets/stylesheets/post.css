@@ -34,6 +34,8 @@
 
 /* 人物詳細画面 */
 .post{
+  position: relative;
+  min-height: 120vh;
   height: 100%;
   margin: 0;
   padding: 0;

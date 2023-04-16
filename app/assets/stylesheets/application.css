@@ -34,13 +34,17 @@ header a:hover {
 
 header a:link, header a:visited, header a:hover, header a:active {
   color: white;
+  font-size: 20px;
   text-shadow: -2px -2px 0 black;
 }
 
 .header-logo{
   margin-top: 20px;
-  margin-left: 8px;
+  margin-left: 20px;
   float: left;
+}
+
+.header-logo a:link{
   font-size: 40px;
   font-family: "HG行書体", sans-serif;
 }
@@ -94,10 +98,12 @@ body{
 }
 
 .opening_message p{
+  padding-top: 5px;
   color: #FFA500;
 }
 
 .map{
+  font-family: "HG行書体", sans-serif;
   text-align:center;
   width: 1000px;
   height: 1000px;
@@ -114,7 +120,6 @@ body{
 }
 
 .map_choice a{
-  font-family: "HG行書体", sans-serif;
   font-size: 20px;
   padding: 5px;
   padding-left: 10px;
@@ -958,7 +963,7 @@ footer{
   background-repeat: no-repeat;
   background-position: 0% 80%;
   background-size: cover;
-  position: relative;
+  position: absolute;
   bottom: 0;
   z-index: 0;
 }
