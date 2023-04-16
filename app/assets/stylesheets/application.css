@@ -42,14 +42,14 @@ header a:link, header a:visited, header a:hover, header a:active {
   margin-left: 8px;
   float: left;
   font-size: 40px;
-  font-family: 青柳隷書SIMO2_O;
+  font-family: "HG行書体", sans-serif;
 }
 
 .header-menus{
   text-align:right;
   list-style:none;
   float: right;
-  font-family: 青柳隷書SIMO2_O;
+  font-family: "HG行書体", sans-serif;
 }
 
 .header-menus li {
@@ -63,6 +63,14 @@ body{
   margin-bottom: 0%;
   background-image: url(../application_images/body_back.jpg);
   background-size: auto 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper{
+  min-height: 100vh;
+  position: relative;
 }
 
 /* top画面 */
@@ -106,7 +114,7 @@ body{
 }
 
 .map_choice a{
-  font-family: 青柳隷書SIMO2_O;
+  font-family: "HG行書体", sans-serif;
   font-size: 20px;
   padding: 5px;
   padding-left: 10px;
@@ -199,7 +207,6 @@ body{
 }
 
 .map_index a{
-  font-family: 青柳隷書SIMO2_O;
   background-color: 	#800080;
   box-shadow: 3px 3px #4B0082;
   width: 250px;
@@ -231,7 +238,7 @@ body{
 }
 
 .create_post a{
-  font-family: 青柳隷書SIMO2_O;
+  font-family: "HG行書体", sans-serif;
   background-color: 	#5df1a0;
   box-shadow: 3px 3px #0b6d44;
   width: 150px;
@@ -258,7 +265,6 @@ body{
 
 /* マップ選択画面 */
 .show_map a{
-  font-family: 青柳隷書SIMO2_O;
   font-size: 20px;
   padding: 5px;
   padding-left: 10px;
@@ -810,7 +816,7 @@ body{
 }
 
 .map_index_choice p{
-  font-family: 青柳隷書SIMO2_O;
+  font-family: "HG行書体", sans-serif;
   text-shadow: -1px -1px 1px 1px black;
   text-align: center;
   font-size: 17px;
@@ -825,7 +831,7 @@ body{
 
 .map_index_choice td a{
   line-height: 30px;
-  font-family: 青柳隷書SIMO2_O;
+  font-family: "HG行書体", sans-serif;
   color: white;
   transition:all 1s;
   padding-top: 10%;
@@ -943,11 +949,6 @@ body{
   height: 200px;
 }
 
-.wrapper{
-  min-height: 100vh;
-  position: relative;
-}
-
 /* フッター */
 footer{  
   text-align:center;
@@ -957,10 +958,9 @@ footer{
   background-repeat: no-repeat;
   background-position: 0% 80%;
   background-size: cover;
-  position: absolute;
+  position: relative;
   bottom: 0;
   z-index: 0;
-
 }
 
 footer img{
@@ -969,10 +969,6 @@ footer img{
 }
 
 /* 検索機能 */
-.post_index{
-  min-height: 100vh;
-}
-
 .post_search{
   margin: 0 auto;
   text-align: center;
@@ -999,7 +995,7 @@ footer img{
 }
 
 .map_search a{
-  font-family: 青柳隷書SIMO2_O;
+  font-family: "HG行書体", sans-serif;
   background-color: 	#220080;
   box-shadow: 3px 3px #000744;
   width: 250px;
